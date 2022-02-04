@@ -39,15 +39,24 @@ button.onclick = function() {
 });
 
 // Darkmode
+
 document.addEventListener("DOMContentLoaded", function() {
 
 var button = document.createElement('button');
 button.innerHTML = 'Dark Mode';
 button.addEventListener('click', function() {
-  if (document.body.style.backgroundColor === 'gray') {
-    document.body.style.backgroundColor = 'white';
+  if (button.innerHTML === 'Dark Mode') {
+    button.innerHTML = 'Light Mode';
+    textBox1.style.backgroundColor = 'black';
+    textBox1.style.color = 'white';
+    textBox2.style.backgroundColor = 'black';
+    textBox2.style.color = 'white';
   } else {
-    document.body.style.backgroundColor = 'gray';
+    button.innerHTML = 'Dark Mode';
+    textBox1.style.backgroundColor = 'white';
+    textBox1.style.color = 'black';
+    textBox2.style.backgroundColor = 'white';
+    textBox2.style.color = 'black';
   }
 });
 document.body.appendChild(button);
@@ -59,6 +68,11 @@ button.style.right = '10px';
 button.style.top = '10px';
 });
         </script>
+        <style>
+          body {
+              background-color: #383838;
+          }
+          </style>
 
     </head>
 
