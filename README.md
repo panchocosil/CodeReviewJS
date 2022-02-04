@@ -15,6 +15,8 @@ LinkfinderJS.html Finds:
 - Relative URLs with at least one slash (text/test.php)
 - Relative URLs without a slash (test.php)
 
+NEW: Using Beautifier v1.14.0 to detect packers and obfuscators.
+
 https://htmlpreview.github.io/?https://github.com/panchocosil/CodeReviewJS/blob/main/LinkfinderJS.html
 
 ---
