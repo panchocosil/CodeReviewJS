@@ -7,7 +7,7 @@ JavaScript Web Tools:
 
 Usages:
 
-Review code and extract all paths and urls (Inspired from [LinkFinder](https://github.com/GerbenJavado/LinkFinder) Python tool)
+Extract All Paths and URLs: (Inspired from [LinkFinder](https://github.com/GerbenJavado/LinkFinder) Python tool)
 
 https://htmlpreview.github.io/?https://github.com/panchocosil/CodeReviewJS/blob/main/LinkfinderJS.html
 
