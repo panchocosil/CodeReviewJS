@@ -3,9 +3,10 @@
 JavaScript tools that help Security Researchers review texts and codes using cool Regex and JavaScript.
 
 
-[LinkFinder](https://github.com/GerbenJavado/LinkFinder)
+JavaScript Web Tools:
 
-Usage:
+Usages:
+
 Review code and extract all paths and urls (Inspired from [LinkFinder](https://github.com/GerbenJavado/LinkFinder) Python tool)
 https://htmlpreview.github.io/?https://github.com/panchocosil/CodeReviewJS/blob/main/LinkfinderJS.html
 
