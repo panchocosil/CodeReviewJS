@@ -9,6 +9,12 @@ Usages:
 
 Extract All Paths and URLs: (Inspired from [LinkFinder](https://github.com/GerbenJavado/LinkFinder) Python tool)
 
+LinkfinderJS.html Finds:
+- Full URLs (https://example.com/*)
+- Absolute URLs or dotted URLs (/\* or ../*)
+- Relative URLs with at least one slash (text/test.php)
+- Relative URLs without a slash (test.php)
+
 https://htmlpreview.github.io/?https://github.com/panchocosil/CodeReviewJS/blob/main/LinkfinderJS.html
 
 ---
