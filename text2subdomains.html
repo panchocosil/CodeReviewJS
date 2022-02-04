@@ -1,0 +1,68 @@
+
+<html>
+    <head>
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+var textBox1 = document.createElement('textarea');
+textBox1.id = 'textBox1';
+textBox1.rows = 10;
+textBox1.cols = 50;
+document.body.appendChild(textBox1);
+
+var textBox2 = document.createElement('textarea');
+textBox2.id = 'textBox2';
+textBox2.rows = 10;
+textBox2.cols = 50;
+document.body.appendChild(textBox2);
+
+textBox1.value = "Paste the Text with Domains y Subdomains Here \n\nExample: \n\nvar textBox1 = document.createElement('textarea');\ntextBox1.id = 'textBox1';\ntextBox1.rows = 10;\ntextBox1.cols = 50;\ndocument.body.appendChild(textBox1);\n\nvar textBox2 = document.createElement('/adminacess?token=ABC');\ntextBox2.id = 'textBox2';\ntextBox2.rows = 10;\ntextBox2.cols = 50;\ndocument.body.appendChild(textBox2);\n\nvar button = document.createElement('button');\nbutton.innerHTML = 'https://www.example.com/admin/api';\ndocument.body.appendChild(button);\n\nbutton.onclick = function() {\n  var textBox1 = document.getElementById('/admin/superamin');\n  var textBox2 = document.getElementById('textBox2');\n  var text = textBox1";
+textBox2.value = "Result will go here";
+
+
+var button = document.createElement('button');
+button.innerHTML = 'Extract Subdomains';
+document.body.appendChild(button);
+
+button.onclick = function() {
+  var textBox1 = document.getElementById('textBox1');
+  var textBox2 = document.getElementById('textBox2');
+  var text = textBox1.value;
+  var url = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
+  var result1 = text.match(url);
+
+    if (result1) {
+        textBox2.value = result1.join('\n');    
+    } else {
+        textBox2.value = 'Domains and Subdomains Not Found :(';
+    }
+}
+});
+
+// Darkmode
+document.addEventListener("DOMContentLoaded", function() {
+
+var button = document.createElement('button');
+button.innerHTML = 'Dark Mode';
+button.addEventListener('click', function() {
+  if (document.body.style.backgroundColor === 'gray') {
+    document.body.style.backgroundColor = 'white';
+  } else {
+    document.body.style.backgroundColor = 'gray';
+  }
+});
+document.body.appendChild(button);
+
+document.body.removeChild(button);
+document.body.appendChild(button);
+button.style.position = 'absolute';
+button.style.right = '10px';
+button.style.top = '10px';
+});
+        </script>
+
+    </head>
+
+        </div>
+    </body>
+</html>
