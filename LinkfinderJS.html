@@ -106,8 +106,8 @@ uploadButton.onclick = function() {
     var file = fileInput.files[0]; // get file
     var reader = new FileReader(); // create reader
     reader.onload = function() { // set onload event
-      var textBox2 = document.getElementById('textBox1'); // get textbox2
-      textBox2.value = reader.result; // set textbox2 value
+      var textBox1 = document.getElementById('textBox1'); // get textbox1
+      textBox1.value = reader.result; // set textbox1 value
     }
     reader.readAsText(file); // read file as text
   }
