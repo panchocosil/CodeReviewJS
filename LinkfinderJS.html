@@ -18,7 +18,7 @@ textBox2.rows = 40;
 textBox2.cols = 50;
 document.body.appendChild(textBox2);
 
-textBox1.value = "Paste the Javascript Here \n\nExample: \n\nvar textBox1 = document.createElement('textarea');\ntextBox1.id = 'textBox1';\ntextBox1.rows = 10;\ntextBox1.cols = 50;\ndocument.body.appendChild(textBox1);\n\nvar textBox2 = document.createElement('/adminacess?token=ABC');\ntextBox2.id = 'textBox2';\ntextBox2.rows = 10;\ntextBox2.cols = 50;\ndocument.body.appendChild(textBox2);\n\nvar button = document.createElement('button');\nbutton.innerHTML = '//www.example.com/admin/api';\ndocument.body.appendChild(button);\n\nbutton.onclick = function() {\n  var textBox1 = document.getElementById('/admin/superamin');\n  var textBox2 = document.getElementById('textBox2');\n  var text = textBox1";
+textBox1.value = "Paste the Javascript Here \n\nExample: \n\nif ('this_is'==/an_example/){of_beautifier();}else{var a=b?(c%d):e[f];}\n\nvar textBox1 = document.createElement('textarea');\ntextBox1.id = 'textBox1';\ntextBox1.rows = 10;\ntextBox1.cols = 50;\ndocument.body.appendChild(textBox1);\n\nvar textBox2 = document.createElement('/adminacess?token=ABC');\ntextBox2.id = 'textBox2';\ntextBox2.rows = 10;\ntextBox2.cols = 50;\ndocument.body.appendChild(textBox2);\n\nvar button = document.createElement('button');\nbutton.innerHTML = '//www.example.com/admin/api';\ndocument.body.appendChild(button);\n\nbutton.onclick = function() {\n  var textBox1 = document.getElementById('/admin/superamin');\n  var textBox2 = document.getElementById('textBox2');\n  var text = textBox1";
 textBox2.value = "Result will go here";
 
 
@@ -60,10 +60,7 @@ buttonclear.onclick = function() {
 
 
 });
-</script>
 
-
-<script>
 
 // add botton to beautify.
 var beautifyButton = document.createElement('button');
@@ -96,8 +93,26 @@ beautifyButton.onclick = function() {
   textBox1.value = result;
 }
 
-</script>
-        <script>
+// add botton to upload file to textbox1.
+var uploadButton = document.createElement('button'); // create button
+uploadButton.innerHTML = 'upload file'; // set button text
+document.body.appendChild(uploadButton); // add button to body
+
+// upload file to textbox1.
+uploadButton.onclick = function() {
+  var fileInput = document.createElement('input'); // create input
+  fileInput.type = 'file'; // set input type
+  fileInput.onchange = function() { // set onchange event
+    var file = fileInput.files[0]; // get file
+    var reader = new FileReader(); // create reader
+    reader.onload = function() { // set onload event
+      var textBox2 = document.getElementById('textBox1'); // get textbox2
+      textBox2.value = reader.result; // set textbox2 value
+    }
+    reader.readAsText(file); // read file as text
+  }
+  fileInput.click(); // click input
+}
 
 // Darkmode
 
