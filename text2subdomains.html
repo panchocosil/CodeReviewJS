@@ -1,8 +1,8 @@
 
 <html>
-    <head>
-                <title>Extract Domains, Subdomains and IPs from Text</title>
-        <script>
+  <head>
+              <title>Extract Domains, Subdomains and IPs from Text</title>
+      <script>
 document.addEventListener("DOMContentLoaded", function() {
 
 var textBox1 = document.createElement('textarea');
@@ -26,18 +26,38 @@ button.innerHTML = 'Extract Subdomains';
 document.body.appendChild(button);
 
 button.onclick = function() {
-  var textBox1 = document.getElementById('textBox1');
-  var textBox2 = document.getElementById('textBox2');
-  var text = textBox1.value;
-  var url = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
-  var result1 = text.match(url);
+var textBox1 = document.getElementById('textBox1');
+var textBox2 = document.getElementById('textBox2');
+var text = textBox1.value;
+var url = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
+var result1 = text.match(url);
 
-    if (result1) {
-        textBox2.value = result1.join('\n');    
-    } else {
-        textBox2.value = 'Domains and Subdomains Not Found :(';
-    }
+  if (result1) {
+      textBox2.value = result1.join('\n');    
+  } else {
+      textBox2.value = 'Domains and Subdomains Not Found :(';
+  }
 }
+
+// Add a button with the message "Sort and Delete Duplicate".
+var buttonclear = document.createElement('button');
+buttonclear.innerHTML = 'Sort and Delete Duplicate';
+document.body.appendChild(buttonclear);
+
+// Add a Action that Delete duplicate and sort the content of textbox2.
+buttonclear.onclick = function() {
+  var textBox2 = document.getElementById('textBox2');
+  var textBox2Content = textBox2.value;
+  var textBox2ContentArray = textBox2Content.split('\n');
+  var textBox2ContentArraySorted = textBox2ContentArray.sort();
+  var textBox2ContentArraySortedUnique = textBox2ContentArraySorted.filter(function(item, pos) {
+    return textBox2ContentArraySorted.indexOf(item) == pos;
+  });
+  var textBox2ContentArraySortedUniqueString = textBox2ContentArraySortedUnique.join('\n');
+  textBox2.value = textBox2ContentArraySortedUniqueString;
+}
+
+
 });
 
 // Darkmode
@@ -47,19 +67,19 @@ document.addEventListener("DOMContentLoaded", function() {
 var button = document.createElement('button');
 button.innerHTML = 'Dark Mode';
 button.addEventListener('click', function() {
-  if (button.innerHTML === 'Dark Mode') {
-    button.innerHTML = 'Light Mode';
-    textBox1.style.backgroundColor = 'black';
-    textBox1.style.color = 'white';
-    textBox2.style.backgroundColor = 'black';
-    textBox2.style.color = 'white';
-  } else {
-    button.innerHTML = 'Dark Mode';
-    textBox1.style.backgroundColor = 'white';
-    textBox1.style.color = 'black';
-    textBox2.style.backgroundColor = 'white';
-    textBox2.style.color = 'black';
-  }
+if (button.innerHTML === 'Dark Mode') {
+  button.innerHTML = 'Light Mode';
+  textBox1.style.backgroundColor = 'black';
+  textBox1.style.color = 'white';
+  textBox2.style.backgroundColor = 'black';
+  textBox2.style.color = 'white';
+} else {
+  button.innerHTML = 'Dark Mode';
+  textBox1.style.backgroundColor = 'white';
+  textBox1.style.color = 'black';
+  textBox2.style.backgroundColor = 'white';
+  textBox2.style.color = 'black';
+}
 });
 document.body.appendChild(button);
 
@@ -69,15 +89,15 @@ button.style.position = 'absolute';
 button.style.right = '10px';
 button.style.top = '10px';
 });
-        </script>
-        <style>
-          body {
-              background-color: #383838;
-          }
-          </style>
+      </script>
+      <style>
+        body {
+            background-color: #383838;
+        }
+        </style>
 
-    </head>
+  </head>
 
-        </div>
-    </body>
+      </div>
+  </body>
 </html>
