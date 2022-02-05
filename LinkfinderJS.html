@@ -61,6 +61,27 @@ buttonclear.onclick = function() {
 
 });
 
+// add botton to upload file to textbox1.
+var uploadButton = document.createElement('button'); // create button
+uploadButton.innerHTML = 'upload file'; // set button text
+document.body.appendChild(uploadButton); // add button to body
+
+// upload file to textbox1.
+uploadButton.onclick = function() {
+  var fileInput = document.createElement('input'); // create input
+  fileInput.type = 'file'; // set input type
+  fileInput.onchange = function() { // set onchange event
+    var file = fileInput.files[0]; // get file
+    var reader = new FileReader(); // create reader
+    reader.onload = function() { // set onload event
+      var textBox1 = document.getElementById('textBox1'); // get textbox1
+      textBox1.value = reader.result; // set textbox1 value
+    }
+    reader.readAsText(file); // read file as text
+  }
+  fileInput.click(); // click input
+}
+
 
 // add botton to beautify.
 var beautifyButton = document.createElement('button');
@@ -93,26 +114,6 @@ beautifyButton.onclick = function() {
   textBox1.value = result;
 }
 
-// add botton to upload file to textbox1.
-var uploadButton = document.createElement('button'); // create button
-uploadButton.innerHTML = 'upload file'; // set button text
-document.body.appendChild(uploadButton); // add button to body
-
-// upload file to textbox1.
-uploadButton.onclick = function() {
-  var fileInput = document.createElement('input'); // create input
-  fileInput.type = 'file'; // set input type
-  fileInput.onchange = function() { // set onchange event
-    var file = fileInput.files[0]; // get file
-    var reader = new FileReader(); // create reader
-    reader.onload = function() { // set onload event
-      var textBox1 = document.getElementById('textBox1'); // get textbox1
-      textBox1.value = reader.result; // set textbox1 value
-    }
-    reader.readAsText(file); // read file as text
-  }
-  fileInput.click(); // click input
-}
 
 // Darkmode
 
