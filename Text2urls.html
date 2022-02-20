@@ -43,6 +43,27 @@ textbox2.style.top = '5%';
 textbox1.value = "Paste the Text with URLs here \n\nExample: \n\nvar textbox1 = document.createElement('textarea');\ntextbox1.id = 'textbox1';\ntextbox1.rows = 10;\ntextbox1.cols = 50;\ndocument.body.appendChild(textbox1);\n\nvar textbox2 = document.createElement('https://adminacess.com/?token=ABC');\ntextbox2.id = 'textbox2';\ntextbox2.rows = 10;\ntextbox2.cols = 50;\ndocument.body.appendChild(textbox2);\n\nvar button = document.createElement('button');\nbutton.innerHTML = 'https://www.example.com/admin/api';\ndocument.body.appendChild(button);\n\nbutton.onclick = function() {\n  var textbox1 = document.getElementById('/admin/superamin');\n  var textbox2 = document.getElementById('textbox2');\n  var text = textbox1";
 textbox2.value = "Result will go here";
 
+// add botton to upload file to textbox1.
+var uploadButton = document.createElement('button'); // create button
+uploadButton.innerHTML = 'upload file'; // set button text
+document.body.appendChild(uploadButton); // add button to body
+
+
+// upload file to textbox1.
+uploadButton.onclick = function() {
+  var fileInput = document.createElement('input'); // create input
+  fileInput.type = 'file'; // set input type
+  fileInput.onchange = function() { // set onchange event
+    var file = fileInput.files[0]; // get file
+    var reader = new FileReader(); // create reader
+    reader.onload = function() { // set onload event
+      var textbox1 = document.getElementById('textbox1'); // get textbox1
+      textbox1.value = reader.result; // set textbox1 value
+    }
+    reader.readAsText(file); // read file as text
+  }
+  fileInput.click(); // click input
+}
 
 var button = document.createElement('button');
 button.innerHTML = 'Extract Urls';
