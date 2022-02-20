@@ -5,37 +5,62 @@
       <script>
 document.addEventListener("DOMContentLoaded", function() {
 
-var textBox1 = document.createElement('textarea');
-textBox1.id = 'textBox1';
-textBox1.rows = 40;
-textBox1.cols = 53;
-document.body.appendChild(textBox1);
+var textbox1 = document.createElement('textarea');
+textbox1.setAttribute('id', 'textbox1');
+document.body.appendChild(textbox1);
 
-var textBox2 = document.createElement('textarea');
-textBox2.id = 'textBox2';
-textBox2.rows = 40;
-textBox2.cols = 50;
-document.body.appendChild(textBox2);
+var textbox2 = document.createElement('textarea');
+textbox2.setAttribute('id', 'textbox2');
+document.body.appendChild(textbox2);
 
-textBox1.value = "Paste the Text with Domains, Subdomains and IPs Here \n\nExample: \n\napi.vulnscope.com 18.219.164.104\nsandbox-landing.vulnscope.com 65.8.205.38,65.8.205.17,65.8.205.74,65.8.205.37\nvulnscope.com 104.21.67.115,172.67.221.210,2606:4700:3031::6815:4373,2606:4700:3035::ac43:ddd2\nssr-landing.vulnscope.com 2606:4700:3031::6815:4373,104.21.67.115,172.67.221.210,2606:4700:3035::ac43:ddd2\nwww.vulnscope.com 172.67.221.210,2606:4700:3035::ac43:ddd2,104.21.67.115,2606:4700:3031::6815:4373\napp.vulnscope.com 108.157.4.17,2600:9000:21ed:c600:10:5d48:6d40:93a1,2600:9000:21ed:b800:10:5d48:6d40:93a1,2600:9000:21ed:f400:10:5d48:6d40:93a1,108.157.4.95,2600:9000:21ed:6600:10:5d48:6d40:93a1,2600:9000:21ed:d000:10:5d48:6d40:93a1,2600:9000:21ed:2000:10:5d48:6d40:93a1,108.157.4.127,108.157.4.81,2600:9000:21ed:a200:10:5d48:6d40:93a1,2600:9000:21ed:e400:10:5d48:6d40:93a1\nsandbox-app.vulnscope.com 65.8.205.91,65.8.205.81,65.8.205.17,65.8.205.53\nsandbox-api.vulnscope.com 3.128.234.145,3.131.130.40\nsandbox-admin.vulnscope.com 2600:9000:21f4:d200:b:5bb:6cc0:93a1,2600:9000:21f4:cc00:b:5bb:6cc0:93a1,2600:9000:21f4:2600:b:5bb:6cc0:93a1,13.227.200.105,13.227.200.36,13.227.200.108,13.227.200.75,2600:9000:21f4:2000:b:5bb:6cc0:93a1,2600:9000:21f4:ce00:b:5bb:6cc0:93a1,2600:9000:21f4:7400:b:5bb:6cc0:93a1,2600:9000:21f4:d800:b:5bb:6cc0:93a1,2600:9000:21f4:a600:b:5bb:6cc0:93a1";
-textBox2.value = "Result will go here";
+var textbox1 = document.getElementById('textbox1');
+var textbox2 = document.getElementById('textbox2');
+textbox1.style.position = 'absolute';
+textbox1.style.left = '0px';
+textbox1.style.width = '50%';
+textbox1.style.height = '95%';
+
+
+textbox1.style.fontFamily = 'monospace';
+textbox1.style.padding = '10px';
+textbox1.style.border = '1px solid #000000';
+textbox1.style.borderRadius = '10px';
+textbox1.style.boxShadow = '0px 0px 10px #000000';
+
+textbox2.style.position = 'absolute';
+textbox2.style.left = '50%';
+textbox2.style.width = '50%';
+textbox2.style.height = '95%';
+
+textbox2.style.fontFamily = 'monospace';
+textbox2.style.padding = '10px';
+textbox2.style.border = '1px solid #000000';
+textbox2.style.borderRadius = '10px';
+textbox2.style.boxShadow = '0px 0px 10px #000000';
+
+textbox1.style.top = '5%';
+textbox2.style.top = '5%';
+
+textbox1.value = "Paste the Text with Domains, Subdomains and IPs Here \n\nExample: \n\napi.vulnscope.com 18.219.164.104\nsandbox-landing.vulnscope.com 65.8.205.38,65.8.205.17,65.8.205.74,65.8.205.37\nvulnscope.com 104.21.67.115,172.67.221.210,2606:4700:3031::6815:4373,2606:4700:3035::ac43:ddd2\nssr-landing.vulnscope.com 2606:4700:3031::6815:4373,104.21.67.115,172.67.221.210,2606:4700:3035::ac43:ddd2\nwww.vulnscope.com 172.67.221.210,2606:4700:3035::ac43:ddd2,104.21.67.115,2606:4700:3031::6815:4373\napp.vulnscope.com 108.157.4.17,2600:9000:21ed:c600:10:5d48:6d40:93a1,2600:9000:21ed:b800:10:5d48:6d40:93a1,2600:9000:21ed:f400:10:5d48:6d40:93a1,108.157.4.95,2600:9000:21ed:6600:10:5d48:6d40:93a1,2600:9000:21ed:d000:10:5d48:6d40:93a1,2600:9000:21ed:2000:10:5d48:6d40:93a1,108.157.4.127,108.157.4.81,2600:9000:21ed:a200:10:5d48:6d40:93a1,2600:9000:21ed:e400:10:5d48:6d40:93a1\nsandbox-app.vulnscope.com 65.8.205.91,65.8.205.81,65.8.205.17,65.8.205.53\nsandbox-api.vulnscope.com 3.128.234.145,3.131.130.40\nsandbox-admin.vulnscope.com 2600:9000:21f4:d200:b:5bb:6cc0:93a1,2600:9000:21f4:cc00:b:5bb:6cc0:93a1,2600:9000:21f4:2600:b:5bb:6cc0:93a1,13.227.200.105,13.227.200.36,13.227.200.108,13.227.200.75,2600:9000:21f4:2000:b:5bb:6cc0:93a1,2600:9000:21f4:ce00:b:5bb:6cc0:93a1,2600:9000:21f4:7400:b:5bb:6cc0:93a1,2600:9000:21f4:d800:b:5bb:6cc0:93a1,2600:9000:21f4:a600:b:5bb:6cc0:93a1";
+textbox2.value = "Result will go here";
 
 
 var button = document.createElement('button');
 button.innerHTML = 'Extract Subdomains';
 document.body.appendChild(button);
 
+
 button.onclick = function() {
-var textBox1 = document.getElementById('textBox1');
-var textBox2 = document.getElementById('textBox2');
-var text = textBox1.value;
+var textbox1 = document.getElementById('textbox1');
+var textbox2 = document.getElementById('textbox2');
+var text = textbox1.value;
 var url = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
 var result1 = text.match(url);
 
   if (result1) {
-      textBox2.value = result1.join('\n');    
+      textbox2.value = result1.join('\n');    
   } else {
-      textBox2.value = 'Domains and Subdomains Not Found :(';
+      textbox2.value = 'Domains and Subdomains Not Found :(';
   }
 }
 
@@ -46,15 +71,15 @@ document.body.appendChild(buttonclear);
 
 // Add a Action that Delete duplicate and sort the content of textbox2.
 buttonclear.onclick = function() {
-  var textBox2 = document.getElementById('textBox2');
-  var textBox2Content = textBox2.value;
-  var textBox2ContentArray = textBox2Content.split('\n');
-  var textBox2ContentArraySorted = textBox2ContentArray.sort();
-  var textBox2ContentArraySortedUnique = textBox2ContentArraySorted.filter(function(item, pos) {
-    return textBox2ContentArraySorted.indexOf(item) == pos;
+  var textbox2 = document.getElementById('textbox2');
+  var textbox2Content = textbox2.value;
+  var textbox2ContentArray = textbox2Content.split('\n');
+  var textbox2ContentArraySorted = textbox2ContentArray.sort();
+  var textbox2ContentArraySortedUnique = textbox2ContentArraySorted.filter(function(item, pos) {
+    return textbox2ContentArraySorted.indexOf(item) == pos;
   });
-  var textBox2ContentArraySortedUniqueString = textBox2ContentArraySortedUnique.join('\n');
-  textBox2.value = textBox2ContentArraySortedUniqueString;
+  var textbox2ContentArraySortedUniqueString = textbox2ContentArraySortedUnique.join('\n');
+  textbox2.value = textbox2ContentArraySortedUniqueString;
 }
 
 
@@ -69,16 +94,16 @@ button.innerHTML = 'Dark Mode';
 button.addEventListener('click', function() {
 if (button.innerHTML === 'Dark Mode') {
   button.innerHTML = 'Light Mode';
-  textBox1.style.backgroundColor = 'black';
-  textBox1.style.color = 'white';
-  textBox2.style.backgroundColor = 'black';
-  textBox2.style.color = 'white';
+  textbox1.style.backgroundColor = 'black';
+  textbox1.style.color = 'white';
+  textbox2.style.backgroundColor = 'black';
+  textbox2.style.color = 'white';
 } else {
   button.innerHTML = 'Dark Mode';
-  textBox1.style.backgroundColor = 'white';
-  textBox1.style.color = 'black';
-  textBox2.style.backgroundColor = 'white';
-  textBox2.style.color = 'black';
+  textbox1.style.backgroundColor = 'white';
+  textbox1.style.color = 'black';
+  textbox2.style.backgroundColor = 'white';
+  textbox2.style.color = 'black';
 }
 });
 document.body.appendChild(button);
