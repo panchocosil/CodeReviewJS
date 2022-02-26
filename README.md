@@ -19,6 +19,7 @@ NEW: Using Beautifier v1.14.0 to detect packers and obfuscators.
 
 https://htmlpreview.github.io/?https://github.com/panchocosil/CodeReviewJS/blob/main/LinkfinderJS.html
 
+# Extra:
 ---
 
 Extract URLs From Text:
@@ -33,4 +34,4 @@ https://htmlpreview.github.io/?https://github.com/panchocosil/CodeReviewJS/blob/
 
 ---
 
-IMPORTANT: All the data input is processed on your own browser this means that this tool is static and does not log or store data. Feel free to use all you like.
+IMPORTANT: All the data input is processed on your own browser this means that this tools are static and does not log or store data. Feel free to use all you like.
